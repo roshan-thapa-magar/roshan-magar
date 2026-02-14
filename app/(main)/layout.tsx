@@ -57,7 +57,7 @@ export default function RootLayout({
             {/* Page content (scrollable) */}
             <main className="flex-1 overflow-y-auto hide-scrollbar max-w-7xl mx-auto p-4 w-full">
               {children}
-              <Footer />
+              {/* <Footer /> */}
             </main>
           </div>
           </AuthModalProvider>

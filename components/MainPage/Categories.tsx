@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image"
 import React from "react"
 import {
@@ -7,6 +8,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { useRouter } from "next/navigation"
+
 const categories = [
     { id: 1, image: "/food/image1.png", title: "Momo" },
     { id: 2, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyl5jrFc3LzhI0kHV3SQm5E-FfWIOTW4KReA&s", title: "Thali Meal" },
@@ -28,6 +31,7 @@ const categories = [
 ]
 
 export default function Categories() {
+    const router = useRouter()
     return (
         <div className="mt-4">
         <span className="text-xl font-extrabold">Categories</span>
@@ -35,7 +39,8 @@ export default function Categories() {
             {categories.map((item) => (
                 <div
                     key={item.id}
-                    className="flex-none w-20 flex flex-col items-center space-y-2 text-center border rounded-lg"
+                    onClick={() => router.push(`/filter/${item.id}`)}
+                    className="flex-none w-20 flex flex-col items-center space-y-2 text-center border rounded-lg hover:border-green-500"
                 >
                     <div className="relative h-16 w-16 overflow-hidden rounded-full">
                         <Image

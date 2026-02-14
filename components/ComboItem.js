@@ -4,7 +4,7 @@ export default function ComboItem({ item, className }) {
   return (
     <div
       key={item.id}
-      className={`flex-shrink-0  border-2 border-gray-300 rounded-lg transition-all duration-300 ease-in-out hover:border-green-500 hover:shadow-lg cursor-pointer ${className}`}
+      className={`flex-shrink-0  border rounded-lg transition-all duration-300 ease-in-out hover:border-green-500 hover:shadow-lg cursor-pointer ${className}`}
     >
       <div className="relative w-full rounded-t-md h-32 md:h-48 overflow-hidden">
         <Image
